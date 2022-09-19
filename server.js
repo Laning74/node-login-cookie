@@ -72,7 +72,7 @@ app.post("/register", checkNotAuthenticated, async (req, res) => {
 
 app.delete("/logout", (req, res) => {
   req.logOut();
-  res.redirect("/login");
+  res.redirect("./login");
 });
 
 function checkAuthenticated(req, res, next) {
@@ -90,4 +90,4 @@ function checkNotAuthenticated(req, res, next) {
   next();
 }
 
-app.listen(3000);
+app.listen(3000, console.log("Server Running on http://localhost:3000"));
